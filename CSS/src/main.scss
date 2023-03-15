@@ -1,0 +1,354 @@
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+// Primary
+
+$SoftBlue: hsl(231, 69%, 60%);
+$SoftRed: hsl(0, 94%, 66%);
+
+// Neutral
+
+$GrayishBlue: hsl(229, 8%, 60%);
+$VeryDarkBlue: hsl(229, 31%, 21%);
+
+p {
+  color: $GrayishBlue;
+  font-size: 18px;
+}
+
+.main-heading {
+  p {
+    color: $GrayishBlue;
+    width: 535px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      width: 71vw;
+    }
+  }
+}
+
+.navbar {
+  .container {
+    ul {
+
+      li {
+        .active {
+          background-color: $SoftRed;
+          border: $SoftRed 2px solid;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        a {
+          color: $VeryDarkBlue;
+
+          &:hover {
+            color: $SoftRed;
+          }
+        }
+      }
+
+      @media (max-width: 767px) {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        padding-top: 90px;
+        transform: translateX(-50%);
+        background-color: rgba($VeryDarkBlue, 0.9);
+        width: 100%;
+        height: 100vh;
+
+        li {
+          width: 75%;
+          margin-left: 12.5%;
+          margin-bottom: 10px;
+
+          .active {
+            background-color: transparent;
+            border-color: #fff;
+          }
+
+          a {
+            color: #fff;
+
+            &:hover {
+              color: $GrayishBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.landing {
+
+  .container {
+    height: calc(100vh - 76px);
+
+    @media (max-width: 767px) {
+      height: auto;
+    }
+
+    .text {
+
+      h1 {
+        font-size: 45px;
+
+        @media (max-width: 995px) {
+          font-size: 35px;
+        }
+      }
+
+      p {
+        max-width: 500px;
+      }
+
+      .buttons {
+        button:first-child {
+          background-color: $SoftBlue;
+          border: $SoftBlue 1px solid;
+          color: #fff;
+
+          &:hover {
+            color: $SoftBlue;
+            background-color: transparent;
+          }
+        }
+
+        button:last-child {
+          border: transparent 1px solid;
+
+          &:hover {
+            border-color: #000;
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 600px;
+      position: relative;
+      margin-right: -90px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: -130px;
+        bottom: -30px;
+        width: 75%;
+        height: 75%;
+        background-color: $SoftBlue;
+        z-index: -1;
+        border-radius: 150px 0 0 150px;
+      }
+
+      @media (max-width: 767px) {
+        width: 95%;
+        margin-right: 0;
+
+        &::before {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.features {
+
+  div.nav {
+    width: fit-content;
+
+    button {
+      color: $GrayishBlue;
+      position: relative;
+      border: none;
+
+      &:hover {
+        color: $SoftRed;
+      }
+
+      &.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $SoftRed;
+      }
+
+      @media (max-width: 767px) {
+        border-bottom: #dee2e6 1px solid;
+      }
+    }
+  }
+
+  div.tab-content {
+    .container {
+      .row {
+        .image {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -200px;
+            bottom: -30px;
+            width: 100%;
+            height: 75%;
+            background-color: $SoftBlue;
+            z-index: -1;
+            border-radius: 0 150px 150px 0;
+          }
+
+          @media (max-width: 767px) {
+            width: 95%;
+            margin-right: 0;
+
+            &::before {
+              right: 0;
+            }
+          }
+        }
+
+        .text {
+
+          button {
+            color: #fff;
+            background-color: $SoftBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.extension .container .row {
+  .card {
+    button {
+      color: #fff;
+      background-color: $SoftBlue;
+
+      &:hover {
+        border: 2px solid $SoftBlue;
+        color: $SoftBlue;
+        background-color: transparent;
+      }
+    }
+
+    @media (min-width: 991px) {
+
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 80px;
+      }
+    }
+
+  }
+}
+
+.questionSection {
+  #questions {
+    width: 550px;
+
+    @media (max-width: 600px) {
+      width: 300px;
+    }
+  }
+
+  .accordion-header:hover button {
+    color: $SoftRed;
+  }
+
+  .accordion-button::after {
+    background-image: url("images/icon-arrow.svg");
+
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    filter: invert(42%) sepia(73%) saturate(4823%) hue-rotate(333deg) brightness(95%) contrast(93%);
+  }
+
+  >div:last-child {
+    button {
+      color: #fff;
+      background-color: $SoftBlue;
+    }
+  }
+}
+
+.contact {
+  background-color: $SoftBlue;
+
+  >span {
+    letter-spacing: 3px;
+  }
+
+  form {
+    input {
+      outline: none;
+      width: 400px;
+    }
+
+    button {
+      background-color: $SoftRed !important;
+      color: #fff;
+
+      &:hover {
+        border: 1px solid $SoftRed;
+        color: $SoftRed;
+        background-color: #FFF !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $VeryDarkBlue;
+
+  .container .row {
+    div:first-child {
+      >div {
+
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          color: $SoftRed;
+        }
+      }
+    }
+
+    .icons {
+      img {
+        cursor: pointer;
+
+        &:hover {
+          filter: invert(42%) sepia(73%) saturate(4823%) hue-rotate(333deg) brightness(95%) contrast(93%);
+        }
+      }
+    }
+  }
+}
